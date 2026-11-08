@@ -24,15 +24,39 @@ img { max-width: 100%; display: block; }
 /* top bar */
 .bar {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(3, 5, 11, 0.82); backdrop-filter: blur(10px);
+  background: rgba(3, 5, 11, 0.86); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
-.brand { font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; font-size: 14px; color: var(--text); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 66px; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--text); font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; font-size: 14px; white-space: nowrap; }
+.brand img { width: 30px; height: 30px; border-radius: 6px; }
 .brand b { color: var(--orange); }
-.nav { display: flex; gap: 26px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; }
-.nav a { color: var(--dim); }
-.nav a:hover { color: var(--cyan); text-decoration: none; }
+.brand:hover { text-decoration: none; color: #fff; }
+.nav { display: flex; align-items: center; gap: 6px; }
+.nav a:not(.play) {
+  position: relative; padding: 22px 14px; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text);
+}
+.nav a:not(.play)::after {
+  content: ""; position: absolute; left: 14px; right: 14px; bottom: 14px; height: 2px; background: var(--orange);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.2s;
+}
+.nav a:not(.play):hover { color: #fff; text-decoration: none; }
+.nav a:not(.play):hover::after, .nav a.on::after { transform: scaleX(1); }
+.nav a.on { color: #fff; }
+.nav .play {
+  margin-left: 12px; padding: 9px 22px; font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #04121a; background: var(--orange);
+  clip-path: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%);
+  transition: background 0.15s, transform 0.15s;
+}
+.nav .play:hover { background: #ff8a2e; text-decoration: none; transform: translateY(-1px); }
+@media (max-width: 640px) {
+  .bar .wrap { height: auto; padding: 10px 0; flex-wrap: wrap; justify-content: center; }
+  .nav { flex-wrap: wrap; justify-content: center; }
+  .nav a:not(.play) { padding: 8px 10px; }
+  .nav a:not(.play)::after { bottom: 2px; left: 10px; right: 10px; }
+  .brand span { display: none; }
+}
 
 /* hero */
 .hero {
