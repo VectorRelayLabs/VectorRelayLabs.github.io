@@ -176,15 +176,41 @@ missions.add{
 events.add{
   id = "drifting-beacon",
   name = "Drifting beacon",
-  kind = "beacon",
-  where = "open-space",
-  chance = 0.25,
-  cooldown = 40,
+  kind = "beacon",               -- beacon, derelict, anomaly, wreck, convoy
+  where = "open-space",          -- open-space, near-planet, outpost
+  chance = 0.25,                 -- how likely it is to appear in a sector that day, 0 to 1
+  cooldown = 40,                 -- minutes before it can appear again
   text = "A beacon is tumbling past, still sending a faint repeating signal.",
   choices = {
-    { text = "Scan it", outcome = { credits = 200, log = "A hundred-year-old trade route. Worth a few credits to a collector." } },
-    { text = "Tow it to the nearest station", outcome = { standing = { who = "nearest", amount = 3 }, toast = "The harbormaster is pleased." } },
+    { text = "Scan it", run = function(e)
+        if rand(1, 100) <= 70 then
+          rewards.grant{ credits = 200 }
+          radio.say("Beacon archive", "Packet received: a hundred-year-old trade route.")
+          ui.toast("Scan complete. A collector will pay for this.")
+        else
+          ui.toast("It was bait. Raiders are closing in!")
+          threats.spawn{ count = 2 }
+        end
+      end },
+    { text = "Tow it to the nearest station", run = function(e)
+        rewards.grant{ standing = { who = "nearest", amount = 3 } }
+        store.towed = (store.towed or 0) + 1
+        ui.toast("The harbormaster is pleased.")
+        if store.towed == 3 then events.trigger("harbormasters-favor") end   -- a chain: the third tow opens a new event
+      end },
     { text = "Leave it", outcome = {} },
+  },
+}
+
+events.add{
+  id = "harbormasters-favor",
+  name = "A word from the harbormaster",
+  kind = "convoy",
+  chance = 0,                    -- never appears on its own: only when another event triggers it
+  text = "Three beacons towed in. The harbormaster has a job for someone she trusts.",
+  choices = {
+    { text = "Hear her out", run = function() missions.start("the-audit") end },
+    { text = "Not now", outcome = {} },
   },
 }
 ```

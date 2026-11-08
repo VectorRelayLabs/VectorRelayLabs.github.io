@@ -30,7 +30,7 @@ All read-only.
 | `ui.dialog{title, text, choices}` | A dialog with up to four buttons (see below). |
 | `contracts.offer{...}` | Puts a contract in the current station's board. Fields: `type`, `client`, `cargo`, `destination` (`"nearest"` or a station name), `reward`, `deadline` (minutes). The game applies its own limits: reward is capped per type, and the contract can be declined like any other. |
 
-There is no function that gives credits, items or fuel directly. Rewards come through contracts, and through mission and event rewards that are declared in the registry and capped by the game.
+There is no function that sets credits, items or fuel directly. Rewards come through contracts, mission and event rewards, and `rewards.grant` inside an event choice (see `events.add`), all validated and capped by the game.
 
 
 ## Saved data
