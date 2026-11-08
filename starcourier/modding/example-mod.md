@@ -143,7 +143,7 @@ on("docked", function(e)
   end
 end)
 
--- Offer a small favour job the first time you dock at a station with good standing.
+-- Offer a small favor job the first time you dock at a station with good standing.
 on("docked", function(e)
   if economy.standing(e.station) >= 40 and not store["offered_" .. e.station] then
     store["offered_" .. e.station] = true

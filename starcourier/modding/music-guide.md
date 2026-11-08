@@ -78,7 +78,7 @@ A **chord** is notes played together. You build one by stacking every other note
 
 - **Minor triad** (root + 3 + 7 semitones): D minor = D, F, A = 62, 65, 69. Calm, a little sad.
 - **Major triad** (root + 4 + 7): D major = D, F#, A = 62, 66, 69. Bright.
-- **7th** (add the note 10 or 11 above the root): adds a soft, jazzy colour. `Dm7` = D F A C = 62, 65, 69, 72.
+- **7th** (add the note 10 or 11 above the root): adds a soft, jazzy color. `Dm7` = D F A C = 62, 65, 69, 72.
   `maj7` (11 above) is dreamy: `Bbmaj7` = Bb D F A = 58, 62, 65, 69.
 - **9th** (add the note 14 above the root, which is the same note as 2 above, an octave up): even more open.
   `Dm9` = D F A + E = 62, 65, 69, 76 (E an octave up).
@@ -369,7 +369,7 @@ Goal: a calm docked track in D minor.
 | It's muddy and boomy | The bass note is above 48, or `a` is the same as the bass | Bass in 36 to 48; `a` at least a 5th higher |
 | It's thin and harsh | `bright` too high, `pad` too low | Lower `bright` to 0.35; raise `pad` |
 | Too busy for a quiet moment | `arpDiv` 1, `arp` high, `drums` on | `arpDiv` 2, `arp` 0.2, `drums` under 0.12 |
-| It lurches between chords | The chords share no notes | Swap one chord for one that shares 2 notes with its neighbours |
+| It lurches between chords | The chords share no notes | Swap one chord for one that shares 2 notes with its neighbors |
 | The tune is boring | Every eighth note has a new pitch | Use holds (`-2`) and rests (`-1`); repeat an idea with small changes |
 | Nothing plays | Notes outside 24 to 108, melody not a multiple of 8, or bad `mood` | The Mods menu shows the exact message |
 

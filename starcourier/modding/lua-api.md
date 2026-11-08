@@ -66,7 +66,7 @@ sound and never plays it quite the same way twice (the bells and the small detai
   Add 1 for a sharp (C# = 61), subtract 1 for a flat (Bb = 58).
 - Easy way to build a chord: pick a bass note (octave 2 or 3), then four notes from octave 3 and 4 that sound good
   together. `chord(38, 62, 65, 69, 76)` is D in the bass over D minor (D F A) with an E on top, which sounds
-  open and spacey. Chords that share notes with their neighbours flow smoothly.
+  open and spacey. Chords that share notes with their neighbors flow smoothly.
 
 **Fields**
 
@@ -150,7 +150,7 @@ set to play once. The `music.midi` call is for choosing a name, looping or a gai
 - **They need the sampled soundfont.** If the player has "Sampled instruments" switched off or no soundfont installed,
   MIDI tracks are skipped for that player.
 - **Limits:** up to 24 MIDI files per mod, 1 MB each, 100,000 notes each; a file over the limit is skipped with a
-  message under the mod. Tempo changes, program changes, volume, pan, pitch bend and sustain are honoured. Anything
+  message under the mod. Tempo changes, program changes, volume, pan, pitch bend and sustain are honored. Anything
   else (SysEx, lyrics, meta text) is ignored.
 - **Rights:** only upload MIDI you have the right to share. A MIDI of a copyrighted song is still that song.
 
@@ -188,7 +188,7 @@ read-only table.
 | `landed` | `outpost`, `world` | The ship lands at an outpost. |
 | `pirates_arrived` | `count` | Raiders appear. |
 
-No event can be cancelled or changed in v1. Mods react; they don't decide.
+No event can be canceled or changed in v1. Mods react; they don't decide.
 
 ## Reading state
 
