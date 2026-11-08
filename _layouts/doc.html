@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ page.title }} · Star Courier modding</title>
-<meta name="description" content="{{ page.description | default: 'Modding Star Courier: music, text and Lua scripts.' }}">
+<meta name="description" content="{{ page.description | default: 'Modding Star Courier: music, missions, events and Lua scripts.' }}">
 <meta property="og:title" content="{{ page.title }}">
 <meta property="og:image" content="https://vectorrelaylabs.github.io/starcourier/img/hero.jpg">
 <link rel="icon" href="/starcourier/img/favicon.png">
@@ -22,11 +22,12 @@
 
 <div class="wrap docs">
   <aside class="side">
-    <p class="eyebrow">Modding</p>
-    <a href="/starcourier/modding/"{% if page.section == 'overview' %} class="on"{% endif %}>Overview</a>
-    <a href="/starcourier/modding/music-guide.html"{% if page.section == 'music' %} class="on"{% endif %}>Writing music</a>
-    <a href="/starcourier/modding/lua-api.html"{% if page.section == 'api' %} class="on"{% endif %}>Lua API <i>preview</i></a>
-    <a href="/starcourier/modding/example-mod.html"{% if page.section == 'example' %} class="on"{% endif %}>Example mod <i>preview</i></a>
+    {% for g in site.data.modding.groups %}
+    <details class="grp"{% if page.group == g.id %} open{% endif %}>
+      <summary>{{ g.title }}{% if g.preview %} <i>preview</i>{% endif %}</summary>
+      {% for it in g.items %}{% if it.label %}<span class="sub">{{ it.label }}</span>{% else %}<a href="{{ it.url }}"{% if page.section == it.key %} class="on"{% endif %}>{{ it.title }}{% if it.preview %} <i>preview</i>{% endif %}</a>{% endif %}{% endfor %}
+    </details>
+    {% endfor %}
   </aside>
   <article class="doc">
     <h1>{{ page.title }}</h1>

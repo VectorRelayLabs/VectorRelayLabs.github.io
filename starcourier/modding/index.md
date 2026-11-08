@@ -1,12 +1,14 @@
 ---
 layout: doc
-title: Modding Star Courier
+title: "Modding Star Courier"
 section: overview
-description: Add music, text and scripts to Star Courier.
+group: guides
+description: Add music, missions, events and Lua scripts to Star Courier, and change how the game plays.
 ---
 
-Star Courier is built so players can add to it. Mods are **folders of plain files**, loaded by the game and
-switched on and off from the **Mods** menu (main menu and pause menu, with an **Open mods folder** button).
+Star Courier is built so players can add to it, and keep it fresh long after launch. Mods are **folders of plain
+files**, loaded by the game and switched on and off from the **Mods** menu (main menu and pause menu, with an
+**Open mods folder** button).
 
 ## In the game today (0.9.0-alpha)
 
@@ -20,18 +22,23 @@ switched on and off from the **Mods** menu (main menu and pause menu, with an **
 
 A bad file is skipped with a message, never a crash.
 
-## Coming (preview)
+## What mods will be able to do (preview)
 
-- **Lua mods.** A `mod.lua` that registers its tracks and text and reacts to events: docking, deliveries,
-  cargo damage and more. It runs in a sandbox with no file or network access. See the
-  [Lua API reference](lua-api.html) and the [example mod](example-mod.html). These pages describe planned
-  features and will change.
-- **Writing music.** Tracks are a chord loop plus a melody and a few mix settings. [Writing music](music-guide.html)
-  teaches it from scratch, with the numbers. The synth it describes is the one in the game today.
+The [Lua API](api/) is a preview of what's planned. A mod is a `mod.lua` in a sandbox with no file or network
+access.
+
+- **Add things to do.** [Missions](api/missions.html) with a story and steps, [events](api/events.html) out in the
+  world (a drifting beacon, a derelict, a ship in trouble) with choices, and contracts on a station's board.
+- **Change how the game plays.** [Tweaks](api/tweaks.html) scale existing values (contract pay, prices, raider
+  frequency, cargo damage) within safe ranges, and the Mods menu shows exactly what each mod changes.
+- **Add music and text.** [Tracks](api/music.html) written as a chord loop and a melody, MIDI files, and client
+  and cargo names. [Writing music](music-guide.html) teaches it from scratch, with the numbers.
+- **React to the game** with [events](api/hooks.html) like docking, deliveries and cargo damage, and add
+  [windows and HUD readouts](api/ui.html).
 - **Hot loading:** add, change or remove a mod while the game runs.
-- **Windows and HUD widgets** that mods can add through the same API.
-- **MIDI files** that play through the game's sampled instruments.
 - **Steam Workshop** sharing, once the game is on Steam.
+
+Later: paints, rivalries, achievements, and eventually new worlds and star systems.
 
 ## Feedback
 

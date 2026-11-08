@@ -1,0 +1,27 @@
+groups:
+  - id: guides
+    title: Guides
+    items:
+      - { title: Overview, url: /starcourier/modding/, key: overview }
+      - { title: Writing music, url: /starcourier/modding/music-guide.html, key: music-guide }
+      - { title: Example mod, url: /starcourier/modding/example-mod.html, key: example, preview: true }
+  - id: api
+    title: Lua API
+    preview: true
+    items:
+      - { title: Overview, url: /starcourier/modding/api/, key: api-index }
+      - { title: Sandbox and manifest, url: /starcourier/modding/api/basics.html, key: api-basics }
+      - { label: Content }
+      - { title: Music, url: /starcourier/modding/api/music.html, key: api-music }
+      - { title: Text and names, url: /starcourier/modding/api/text.html, key: api-text }
+      - { title: Missions, url: /starcourier/modding/api/missions.html, key: api-missions }
+      - { title: Events and dialogs, url: /starcourier/modding/api/events.html, key: api-events }
+      - { title: Tweaks, url: /starcourier/modding/api/tweaks.html, key: api-tweaks }
+      - { label: Game }
+      - { title: Game events, url: /starcourier/modding/api/hooks.html, key: api-hooks }
+      - { title: State, actions and saving, url: /starcourier/modding/api/state.html, key: api-state }
+      - { title: Helpers, url: /starcourier/modding/api/helpers.html, key: api-helpers }
+      - { label: Interface }
+      - { title: Windows, HUD and keys, url: /starcourier/modding/api/ui.html, key: api-ui }
+      - { label: Reference }
+      - { title: Co-op, versions and limits, url: /starcourier/modding/api/reference.html, key: api-reference }

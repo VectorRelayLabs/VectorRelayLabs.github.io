@@ -1,15 +1,18 @@
 ---
 layout: doc
-title: Writing music for Star Courier
-section: music
+title: "Writing music for Star Courier"
+section: music-guide
+group: guides
 ---
 
 
 A hands-on guide for people who have never written music. You'll learn just enough theory to build a track,
-and every idea comes with the actual numbers the game wants. It goes with the API reference in the [Lua API reference](lua-api.html)
+and every idea comes with the actual numbers the game wants. It goes with the API reference in the [Lua API](api/)
 (draft: the Lua loader isn't built yet, but the track data below is exactly what the synth plays today).
 
-Contents: 1. Notes and numbers · 2. Scales · 3. Chords · 4. How the game builds a chord · 5. Time: bars, beats, steps · 6. Melody · 7. The arpeggio · 8. The other layers · 9. The mix · 10. Moods · 11. Build a track step by step · 12. When it sounds wrong · 13. Reference tables · 14. MIDI files
+Contents: 1. Notes and numbers · 2. Scales · 3. Chords · 4. How the game builds a chord · 5. Time: bars, beats,
+steps · 6. Melody · 7. The arpeggio · 8. The other layers · 9. The mix · 10. Moods · 11. Build a track step by step ·
+12. When it sounds wrong · 13. Reference tables
 
 ---
 
@@ -409,5 +412,5 @@ entries) · 64 tracks per mod · mix 0 to 1.5 · `transpose` -12 to 12.
 Everything above is for building a track from the synth's chord loop. If you compose in a music program, export a
 standard MIDI file (`.mid`) and the game plays it as written through the sampled soundfont, with your own notes,
 instruments and tempo. Put it in `midi/<mood>/` in your mod (or register it with `music.midi{...}`, see
-the [Lua API reference](lua-api.html)). The note numbers in section 1 are the same numbers a MIDI file uses, so everything you learned
+the [Lua API](api/)). The note numbers in section 1 are the same numbers a MIDI file uses, so everything you learned
 here carries over. Limits: 1 MB and 100,000 notes per file, and it needs the player's sampled instruments switched on.

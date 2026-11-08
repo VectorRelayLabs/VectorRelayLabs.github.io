@@ -1,18 +1,19 @@
 ---
 layout: doc
-title: Example mod: Courier Ledger
+title: "Example mod: Courier Ledger"
 section: example
+group: guides
 preview: true
 ---
 
-A sample `mod.lua` showing the API shape: music, text, a window, a HUD readout, events and a contract offer. It is a design draft: nothing loads it yet.
+A sample `mod.lua` showing the shape of the API: music, text, a window, a HUD readout, events, a mission and an event. It is a design draft: nothing loads it yet.
 
 ```lua
 -- Courier Ledger: a sample Lua mod (DESIGN DRAFT, API v1).
 -- Nothing loads this yet: the Lua loader and StarCourier.Api are not built. It shows what a mod would
--- look like, so the API can be argued about before it is written.
+-- look like, so the API can be argued about before it is written. See docs/MODDING.md.
 --
--- What it does: adds two slow docked tracks and some cargo flavour, keeps a ledger of deliveries in a
+-- What it does: adds two slow docked tracks and some cargo flavor, keeps a ledger of deliveries in a
 -- window (key L), warns when your hull gets low, and thanks you for undamaged fragile deliveries.
 
 mod.id          = "courier-ledger"
@@ -25,7 +26,7 @@ mod.permissions = {}                      -- no file or network access asked for
 
 -- ---------------------------------------------------------------- data
 
--- Music: the same fields as the JSON format; helpers make the arrays short.
+-- Music: the fields are explained in the music guide; helpers make the arrays short.
 music.add{
   name = "Ledger Lines", mood = "docked", bpm = 70, barsPerChord = 2, arpStyle = 0,
   chords = {
@@ -53,7 +54,7 @@ music.add{
   mix = { pad = 0.95, bass = 0.4, arp = 0.25, bells = 0.5, drums = 0.0, bright = 0.3, lead = 0.0 },
 }
 
--- Text: lines are checked like JSON ones (60 characters, no angle brackets, 500 per mod).
+-- Text: lines are checked (60 characters, no angle brackets, 500 per mod).
 text.clients("Ledger & Sons", "The Counting House")
 text.cargo("standard", "bound account books", "sealed ink barrels")
 text.cargo("fragile", "an abacus made of glass")
@@ -153,4 +154,37 @@ on("docked", function(e)
     }
   end
 end)
+
+-- ---------------------------------------------------------------- a mission and an event
+
+missions.add{
+  id = "the-audit",
+  title = "The Audit",
+  giver = "The Counting House",
+  summary = "A client wants its ledgers moved before the inspectors arrive.",
+  rank = 1,
+  repeatable = false,
+  steps = {
+    { kind = "pickup",  text = "Collect the sealed ledgers at {origin}", cargo = "sealed ledgers", at = "nearest" },
+    { kind = "deliver", text = "Take them to {destination} before {deadline}", to = "other-world", deadline = 25 },
+    { kind = "land",    text = "Land at the {destination} outpost to hand over the key", to = "outpost" },
+  },
+  reward = { credits = 1800, standing = { who = "giver", amount = 8 } },
+  on_complete = function(m) ui.toast("The inspectors found nothing. Thanks, courier.") end,
+}
+
+events.add{
+  id = "drifting-beacon",
+  name = "Drifting beacon",
+  kind = "beacon",
+  where = "open-space",
+  chance = 0.25,
+  cooldown = 40,
+  text = "A beacon is tumbling past, still sending a faint repeating signal.",
+  choices = {
+    { text = "Scan it", outcome = { credits = 200, log = "A hundred-year-old trade route. Worth a few credits to a collector." } },
+    { text = "Tow it to the nearest station", outcome = { standing = { who = "nearest", amount = 3 }, toast = "The harbormaster is pleased." } },
+    { text = "Leave it", outcome = {} },
+  },
+}
 ```

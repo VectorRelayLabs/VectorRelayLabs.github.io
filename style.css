@@ -186,3 +186,16 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 30px; justify-content: 
   background: #232b36; color: #7d8a96; border: 0; cursor: not-allowed; transform: none; box-shadow: none;
 }
 .btn.off:hover, .nav .play.off:hover { background: #232b36; transform: none; }
+
+/* docs sub-menu */
+.side { gap: 10px; }
+.grp { border-left: 1px solid var(--line); }
+.grp summary {
+  cursor: pointer; list-style: none; padding: 8px 12px; font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange);
+}
+.grp summary::-webkit-details-marker { display: none; }
+.grp summary::before { content: "▸"; display: inline-block; width: 14px; color: var(--dim); transition: transform 0.15s; }
+.grp[open] summary::before { transform: rotate(90deg); }
+.grp a { display: block; margin-left: 4px; }
+.side .sub { display: block; margin: 10px 0 2px 16px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); }
+@media (max-width: 860px) { .side { display: block; } .grp a { display: inline-block; } }
