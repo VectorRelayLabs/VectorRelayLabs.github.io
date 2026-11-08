@@ -180,3 +180,9 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 30px; justify-content: 
 
 .doc hr { margin: 28px 0 0; }
 .doc hr + h2 { border-top: 0; margin-top: 10px; padding-top: 0; }
+
+/* disabled: the alpha is invite-only for now */
+.btn.off, .nav .play.off {
+  background: #232b36; color: #7d8a96; border: 0; cursor: not-allowed; transform: none; box-shadow: none;
+}
+.btn.off:hover, .nav .play.off:hover { background: #232b36; transform: none; }
