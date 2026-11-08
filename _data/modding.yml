@@ -19,9 +19,9 @@ groups:
       - { title: Tweaks, url: /starcourier/modding/api/tweaks.html, key: api-tweaks }
       - { label: Game }
       - { title: Game events, url: /starcourier/modding/api/hooks.html, key: api-hooks }
-      - { title: State, actions and saving, url: /starcourier/modding/api/state.html, key: api-state }
+      - { title: "State, actions and saving", url: /starcourier/modding/api/state.html, key: api-state }
       - { title: Helpers, url: /starcourier/modding/api/helpers.html, key: api-helpers }
       - { label: Interface }
-      - { title: Windows, HUD and keys, url: /starcourier/modding/api/ui.html, key: api-ui }
+      - { title: "Windows, HUD and keys", url: /starcourier/modding/api/ui.html, key: api-ui }
       - { label: Reference }
-      - { title: Co-op, versions and limits, url: /starcourier/modding/api/reference.html, key: api-reference }
+      - { title: "Co-op, versions and limits", url: /starcourier/modding/api/reference.html, key: api-reference }

@@ -11,7 +11,7 @@ A sample `mod.lua` showing the shape of the API: music, text, a window, a HUD re
 ```lua
 -- Courier Ledger: a sample Lua mod (DESIGN DRAFT, API v1).
 -- Nothing loads this yet: the Lua loader and StarCourier.Api are not built. It shows what a mod would
--- look like, so the API can be argued about before it is written. See docs/MODDING.md.
+-- look like, so the API can be argued about before it is written.
 --
 -- What it does: adds two slow docked tracks and some cargo flavor, keeps a ledger of deliveries in a
 -- window (key L), warns when your hull gets low, and thanks you for undamaged fragile deliveries.
