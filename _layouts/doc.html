@@ -23,7 +23,7 @@
 <div class="wrap docs">
   <aside class="side">
     {% for g in site.data.modding.groups %}
-    <details class="grp"{% if page.group == g.id %} open{% endif %}>
+    <details class="grp" open>
       <summary>{{ g.title }}{% if g.preview %} <i>preview</i>{% endif %}</summary>
       {% for it in g.items %}{% if it.label %}<span class="sub">{{ it.label }}</span>{% else %}<a href="{{ it.url }}"{% if page.section == it.key %} class="on"{% endif %}>{{ it.title }}{% if it.preview %} <i>preview</i>{% endif %}</a>{% endif %}{% endfor %}
     </details>
