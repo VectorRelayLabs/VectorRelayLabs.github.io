@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} · Star Courier modding</title>
+<meta name="description" content="{{ page.description | default: 'Modding Star Courier: music, text and Lua scripts.' }}">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:image" content="https://vectorrelaylabs.github.io/starcourier/img/hero.jpg">
+<link rel="icon" href="/starcourier/img/favicon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="/">Vector Relay <b>Labs</b></a>
+  <nav class="nav"><a href="/starcourier/">Star Courier</a><a href="/starcourier/modding/">Modding</a><a href="https://generalwrex.itch.io/star-courier">Play</a></nav>
+</div></header>
+
+<div class="wrap docs">
+  <aside class="side">
+    <p class="eyebrow">Modding</p>
+    <a href="/starcourier/modding/"{% if page.section == 'overview' %} class="on"{% endif %}>Overview</a>
+    <a href="/starcourier/modding/music-guide.html"{% if page.section == 'music' %} class="on"{% endif %}>Writing music</a>
+    <a href="/starcourier/modding/lua-api.html"{% if page.section == 'api' %} class="on"{% endif %}>Lua API <i>preview</i></a>
+    <a href="/starcourier/modding/example-mod.html"{% if page.section == 'example' %} class="on"{% endif %}>Example mod <i>preview</i></a>
+  </aside>
+  <article class="doc">
+    <h1>{{ page.title }}</h1>
+    {% if page.preview %}<div class="notice"><b>Preview.</b> This describes planned features. It isn't in the game yet and will change.</div>{% endif %}
+    {{ content }}
+  </article>
+</div>
+
+<footer><div class="wrap">
+  <span>&copy; Vector Relay Labs</span>
+  <span><a href="/">Vector Relay Labs</a> &middot; Made with Unity</span>
+</div></footer>
+</body>
+</html>
