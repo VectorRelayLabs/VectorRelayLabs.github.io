@@ -9,9 +9,7 @@ A hands-on guide for people who have never written music. You'll learn just enou
 and every idea comes with the actual numbers the game wants. It goes with the API reference in the [Lua API reference](lua-api.html)
 (draft: the Lua loader isn't built yet, but the track data below is exactly what the synth plays today).
 
-Contents: 1. Notes and numbers · 2. Scales · 3. Chords · 4. How the game builds a chord · 5. Time: bars, beats,
-steps · 6. Melody · 7. The arpeggio · 8. The other layers · 9. The mix · 10. Moods · 11. Build a track step by step ·
-12. When it sounds wrong · 13. Reference tables
+Contents: 1. Notes and numbers · 2. Scales · 3. Chords · 4. How the game builds a chord · 5. Time: bars, beats, steps · 6. Melody · 7. The arpeggio · 8. The other layers · 9. The mix · 10. Moods · 11. Build a track step by step · 12. When it sounds wrong · 13. Reference tables · 14. MIDI files
 
 ---
 
