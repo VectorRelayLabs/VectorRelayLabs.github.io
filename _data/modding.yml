@@ -3,6 +3,7 @@ groups:
     title: Guides
     items:
       - { title: Overview, url: /starcourier/modding/, key: overview }
+      - { title: The console, url: /starcourier/modding/console.html, key: console }
       - { title: Writing music, url: /starcourier/modding/music-guide.html, key: music-guide }
       - { title: Example mod, url: /starcourier/modding/example-mod.html, key: example, preview: true }
   - id: api
