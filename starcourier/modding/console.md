@@ -3,7 +3,7 @@ layout: doc
 title: "The console"
 section: console
 group: guides
-description: The in-game developer console: opening it, reading the log, and the commands that help when you make a mod.
+description: "The in-game developer console: opening it, reading the log, and the commands that help when you make a mod."
 ---
 
 The console is a panel at the top of the screen that shows the game's log and runs commands. It works on the main
